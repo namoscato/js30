@@ -25,6 +25,7 @@
 
     document.addEventListener('keydown', (e) => {
         if (typeof keyCodeMap[e.keyCode] !== 'undefined') {
+            keyCodeMap[e.keyCode].audio.currentTime = 0;
             keyCodeMap[e.keyCode].audio.play();
         }
     });

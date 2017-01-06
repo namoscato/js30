@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "Audio": true,
+    "document": true
+  },
+  "rules": {
+    "indent": ["error", 4]
+  }
+}

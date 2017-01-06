@@ -12,14 +12,14 @@
     audioElements.forEach((audio) => {
         const keyCodeItem = keyCodeMap[audio.dataset.key];
 
-        keyCodeItem.audio = new Audio(audio.src);
+        keyCodeItem.audio = audio;
 
-        keyCodeItem.audio.addEventListener('play', () => {
-            keyCodeItem.element.className = 'key playing';
+        audio.addEventListener('play', () => {
+            keyCodeItem.element.classList.add('playing')
         });
 
-        keyCodeItem.audio.addEventListener('ended', () => {
-            keyCodeItem.element.className = 'key';
+        audio.addEventListener('ended', () => {
+            keyCodeItem.element.classList.remove('playing')
         });
     });
 

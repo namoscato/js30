@@ -15,11 +15,11 @@
         keyCodeItem.audio = audio;
 
         audio.addEventListener('play', () => {
-            keyCodeItem.element.classList.add('playing')
+            keyCodeItem.element.classList.add('playing');
         });
 
         audio.addEventListener('ended', () => {
-            keyCodeItem.element.classList.remove('playing')
+            keyCodeItem.element.classList.remove('playing');
         });
     });
 

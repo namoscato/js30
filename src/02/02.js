@@ -1,17 +1,27 @@
 (() => {
-    function createClockHand(element, intervalSeconds, getTransformationPercentage) {
-        function transform() {
-            this.element.style.transform = `rotate(${(360 * getTransformationPercentage(new Date())) + 90}deg)`;
-        }
+    const clockHands = [
+        {
+            element: document.querySelector('.hour-hand'),
+            getTransformationPercentage: date => (date.getHours() % 12) / 12,
+        },
+        {
+            element: document.querySelector('.min-hand'),
+            getTransformationPercentage: date => (date.getMinutes() % 60) / 60,
+        },
+        {
+            element: document.querySelector('.second-hand'),
+            getTransformationPercentage: date => (date.getSeconds() % 60) / 60,
+        },
+    ];
 
-        this.element = element;
-
-        transform();
-
-        setInterval(() => transform(), intervalSeconds * 1000);
+    function setTime() {
+        clockHands.forEach((hand) => {
+            // eslint-disable-next-line no-param-reassign
+            hand.element.style.transform = `rotate(${(360 * hand.getTransformationPercentage(new Date())) + 90}deg)`;
+        });
     }
 
-    createClockHand(document.querySelector('.hour-hand'), 3600, date => (date.getHours() % 12) / 12);
-    createClockHand(document.querySelector('.min-hand'), 60, date => (date.getMinutes() % 60) / 60);
-    createClockHand(document.querySelector('.second-hand'), 1, date => (date.getSeconds() % 60) / 60);
+    setTime();
+
+    setInterval(setTime, 1000);
 })();

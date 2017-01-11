@@ -1,0 +1,9 @@
+.hl {
+    color: var(--base-color);
+}
+
+img {
+    border: var(--spacing) solid var(--base-color);
+    filter: blur(var(--blur));
+    width: 800px;
+}

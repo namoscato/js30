@@ -15,9 +15,11 @@
     ];
 
     function setTime() {
+        const date = new Date();
+
         clockHands.forEach((hand) => {
             // eslint-disable-next-line no-param-reassign
-            hand.element.style.transform = `rotate(${(360 * hand.getTransformationPercentage(new Date())) + 90}deg)`;
+            hand.element.style.transform = `rotate(${(360 * hand.getTransformationPercentage(date)) + 90}deg)`;
         });
     }
 

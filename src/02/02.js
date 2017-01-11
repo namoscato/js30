@@ -2,15 +2,15 @@
     const clockHands = [
         {
             element: document.querySelector('.hour-hand'),
-            getTransformationPercentage: date => (date.getHours() % 12) / 12,
+            getTransformationPercentage: date => ((date.getHours() % 12) + (date.getMinutes() / 60)) / 12, // eslint-disable-line max-len
         },
         {
             element: document.querySelector('.min-hand'),
-            getTransformationPercentage: date => (date.getMinutes() % 60) / 60,
+            getTransformationPercentage: date => date.getMinutes() / 60,
         },
         {
             element: document.querySelector('.second-hand'),
-            getTransformationPercentage: date => (date.getSeconds() % 60) / 60,
+            getTransformationPercentage: date => date.getSeconds() / 60,
         },
     ];
 

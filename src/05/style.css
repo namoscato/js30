@@ -1,0 +1,58 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #0F0F0F;
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+}
+
+.panels {
+    display: flex;
+    height: 100%;
+}
+
+.panel {
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-size: 1.5em;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    transition: flex 0.6s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+    white-space: nowrap;
+}
+
+.panel-number {
+    font-size: 2.5em;
+    margin: -0.3em 0;
+    transition: margin 0.6s, font-size 0.6s;
+}
+
+.panel-text {
+    opacity: 0;
+    transition: opacity 0.6s;
+    text-transform: lowercase;
+}
+
+.panel.is-active {
+    flex: 5;
+}
+
+.panel.is-active .panel-number {
+    font-size: 3.5em;
+    margin: .05em 0;
+}
+
+.panel.is-active .panel-text {
+    opacity: .8;
+}

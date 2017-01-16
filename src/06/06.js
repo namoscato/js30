@@ -5,7 +5,7 @@
 
     searchInputElement.focus();
 
-    window.fetch('http://jsonip.com')
+    window.fetch('https://jsonip.com')
         .then(response => response.json())
         .then((response) => {
             searchLabelIpElement.innerText = response.ip;

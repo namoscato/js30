@@ -1,0 +1,31 @@
+body {
+    background-color: #002833;
+    color: #afcfd0;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 1.4;
+}
+
+#search {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    width: 25em;
+}
+
+.suggestions {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.population {
+    float: right;
+}
+
+.highlight {
+    background-color: #b4881d;
+    color: #002833;
+}

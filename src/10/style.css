@@ -1,0 +1,45 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.todo-list {
+    width: 15em;
+    margin: 4em auto;
+}
+
+#input {
+    border: none;
+    border-bottom: 0.142857143em solid #f41d12;
+    box-sizing: border-box;
+    display: block;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5em 1em;
+    outline: none;
+    width: 100%;
+}
+
+#tasks {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+#tasks label {
+    border-bottom: 0.071428571em dotted #dedede;
+    display: block;
+    padding: 0.5em 0;
+    user-select: none;
+}
+
+#tasks input {
+    font-size: inherit;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+}
+
+#tasks input:checked + span {
+    color: #cccccc;
+    text-decoration: line-through;
+}

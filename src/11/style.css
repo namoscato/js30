@@ -1,0 +1,83 @@
+body {
+    background-color: #171717;
+    margin: 0;
+}
+
+.player {
+    margin: 5% auto;
+    width: 50em;
+}
+
+.player-video {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.player-progress {
+    background: #787878;
+    margin-top: -4px;
+    height: 0.5em;
+    width: 0;
+}
+
+.player-controls {
+    margin-top: 1.5em;
+}
+
+.player-button {
+    background: none;
+    border: none;
+    color: #787878;
+    cursor: pointer;
+    outline: none;
+}
+
+.player-button-play {
+    color: #fff;
+    font-size: 2em;
+    width: 2em;
+}
+
+.player-button-play::before {
+    content: "\f04b";
+}
+
+.player-button-play.is-playing::before {
+    content: "\f04c";
+}
+
+.player-volume {
+    float: right;
+    position: relative;
+}
+
+.player-volume-range {
+    font-size: 1em;
+    height: 1.6em;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: var(--width);
+}
+
+.player-volume > div {
+    --fill: 0;
+    background-color: #787878;
+    box-shadow: var(--fill) 0 #fff inset;
+    display: inline-block;
+    height: 1.3em;
+    margin: 0.3em 0 0 var(--bar-space);
+    transition: height 250ms ease-out, margin-top 250ms ease-out;
+    width: var(--bar-width);
+}
+
+.player-volume > div.is-active {
+    height: 1.6em;
+    margin-top: 0;
+    transition: height 50ms ease-out, margin-top 50ms ease-out;
+}
+
+.player-volume > div:nth-child(2) {
+    margin-left: 0;
+}
